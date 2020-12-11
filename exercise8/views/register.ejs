@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+<body>
+    <div class="grid-container body">
+        <input type="hidden" value="<%= (typeof errors == 'undefined')?"": errors.message%>" id="errors">
+        <div></div>
+        <div>
+            <form action="/register" method="POST">
+                <p class="register">Register</p>
+                <span class="inline">
+                    <input placeholder="Firstname" type="text" id="firstname" name="firstname" required>
+                    <input placeholder="Lastname" type="text" id="lastname" name="lastname" required><br><br><br>
+                </span>
+                <input class="input" placeholder="Address" type="text" name="address" required><br><br><br>
+                <input class="input" placeholder="Email" type="text" id="email" name="email" required><br><br><br>
+                <input class="input" placeholder="Password" type="password" id="password" name="password"
+                    required><br><br><br>
+                <input class="input" placeholder="Confirm - Password" type="password" id="c-password" name="c_password"
+                    required><br><br><br>
+                   
+                <center>
+                    <input name="register" type="submit"
+                        style="padding: 2% 24%; width: 88%; font-size: 100%; background-color:rgb(80, 130, 20); color: white;"
+                        value="register">
+                </center>
+            </form>
+        </div>
+    </div>
+    <script>
+        window.onload = () => {
+            let errors = document.getElementById('errors').value;
+            if(errors) {
+                alert(errors);
+                console.log(errors);
+            }
+        }
+    </script>
+</body>
+
+</html>
